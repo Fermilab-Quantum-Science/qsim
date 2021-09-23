@@ -1,9 +1,9 @@
 # ---- Edit below -----#
 
-export TF_VAR_project=quantum-htcondor-15
-export TF_VAR_project_id=us-east4-c
-export TF_VAR_zone=us-east4-c
-export TF_VAR_region=us-east4
+export TF_VAR_project=peters-5
+export TF_VAR_project_id=peters-5
+export TF_VAR_zone=us-central1-b
+export TF_VAR_region=us-central1
 export TF_VAR_multizone=true
 export TF_VAR_numzones=4  # for regional/multizone, set to the number of regions in the zone
 # ---- Do not edit below -----#
@@ -19,7 +19,7 @@ gcloud config set compute/region $TF_VAR_region
 
 gcloud config list
 
-gcloud iam service-accounts create htcondor --display-name="Run HTCondor" 
+gcloud iam service-accounts create htcondor --display-name="Run HTCondor"
 
 # Add roles
 gcloud projects add-iam-policy-binding ${TF_VAR_project} --member serviceAccount:${TF_VAR_service_account} --role roles/compute.admin
