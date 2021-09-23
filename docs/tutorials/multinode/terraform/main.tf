@@ -18,7 +18,7 @@ variable "cluster_name" {
   type = string
   default = "c"
   description = "Name used to prefix resources in cluster."
-  
+
 }
 
 module "htcondor" {
@@ -35,6 +35,6 @@ module "htcondor" {
   compute_instance_type = "custom-2-11264"
   service_account="htcondor@${var.project}.iam.gserviceaccount.com"
   use_preemptibles=false
-  osproject ="centos-cloud"
-  osimage ="centos-7"
+  osproject ="peters-5"
+  osimage ="qsim-gpu"
 }
